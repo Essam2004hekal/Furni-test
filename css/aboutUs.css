@@ -1,0 +1,7 @@
+/* Start Our Team */
+.ourTeam .ourLink:hover {
+    text-decoration: none !important;
+    letter-spacing: 0.5px;
+    transition: all 0.5s ease-in-out;
+}
+/* End Our Team */

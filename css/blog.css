@@ -1,0 +1,41 @@
+/* Start Blog */
+.blog {
+    padding-top: var(---padding-top);
+    padding-bottom: var(---padding-bottom) !important;
+}
+.blog .more {
+    text-decoration: underline;
+    color: var(---head-color);
+    font-weight: 500;
+}
+.blog .box {
+    margin-bottom: 55px;
+}
+.blog .box .image img {
+    width: 100%;
+    border-radius: 20px;
+    transition: var(---main-transition);
+    margin-bottom: 20px;
+}
+.blog .box:hover .image img {
+    opacity: 0.7;
+}
+.blog .box .content {
+    padding-inline: 15px;
+}
+.blog .box .content h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+.blog .box .content h3 a {
+    color: var(---head-color);
+}
+.blog .box .content .meta {
+    font-size: 14px;
+}
+.blog .box .content .meta a {
+    font-weight: 600;
+    color: var(---head-color);
+}
+/* End Blog */

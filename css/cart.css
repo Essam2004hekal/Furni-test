@@ -1,0 +1,16 @@
+@media (max-width:767px) {
+    .table-size {
+        width: 100% !important;
+        overflow-x: auto !important;
+    }
+    .cart table tr {
+        padding-bottom: 30px !important;
+    }
+    .cart table button,
+    .cart table .quantity {
+        padding: 0px 8px!important;
+    }
+    .cart table thead, td {
+        font-size: 13px;
+    }
+}

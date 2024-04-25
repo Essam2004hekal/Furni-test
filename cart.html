@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furni</title>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    rel="stylesheet"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.min.css"
+    rel="stylesheet"/>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Css Style  -->
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <!-- Container wrapper -->
+        <div class="container">
+            <!-- Navbar brand -->
+            <a class="navbar-brand mt-2 mt-lg-0" href="#">
+                Furni
+                <span>.</span>
+            </a>
+            <!-- Toggle button -->
+            <button data-mdb-collapse-init class="navbar-toggler" type="button" data-mdb-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <!-- Collapsible wrapper -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Right elements -->
+            <div class="right d-flex align-items-center">
+                <!-- Links -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="shop.html">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="aboutUs.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+                <!-- Icon -->
+                <div class="nav-icons">
+                    <!-- Cart -->
+                    <a class="text-reset me-3 cart-i" href="cart.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="count-item">0</span>
+                    </a>
+                    <!-- User -->
+                    <a class="text-reset me-3" href="#">
+                        <i class="fas fa-user"></i>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+            <!-- Right elements -->
+        </div>
+        <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+
+    <!-- Start Hero Section -->
+    <div class="hero" style="height: fit-content; padding-bottom: 100px;">
+        <div class="container">
+            <div class="main-heading">
+                <h1 class="mt-5"> Cart</h1>
+            </div>
+        </div>
+    </div>
+    <!-- End Hero Section -->
+
+    <!-- Start cart -->
+    <div class="cart">
+        <div class="container">
+            <div class="row pt-5 table-size">
+                <div class="col-12">
+                    <table class="w-100 text-center">
+                        <thead>
+                            <tr>
+                                <th class="py-3"> Image </th>
+                                <th class="py-3"> Prouduct </th>
+                                <th class="py-3"> Price</th>
+                                <th class="py-3"> Quantity </th>
+                                <th class="py-3"> Total </th>
+                                <th class="py-3"> Remove </th>
+                            </tr>
+                        </thead>
+                        <tbody class="items_in_cart">
+                            <!-- <tr class="table-row">
+                                <td class="w-25"><img src="./images/product-1.png" class="w-50" alt=""></td>
+                                <td class=""> Product 1</td>
+                                <td class="Price">30$</td>
+                                <td>
+                                    <div class="d-flex align-items-center justify-content-evenly">
+                                        <button class="border-0 fs-5 increment">+</button>
+                                        <span class="border btn fs-5 m-0 quantity"> 1 </span>
+                                        <button class=" border-0 fs-5 fw-bold decrement">-</button>
+                                    </div>
+                                </td>
+                                <td class="total">30</td>
+                                <td>
+                                    <button class="btn remove">×</button>
+                                </td>
+                            </tr> -->
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row py-5 coupon">
+                <div class="col-12 col-lg-6">
+                    <div class="d-flex align-items-center mb-4">
+                        <button class="btn-all rounded-pill border border-1 me-3 border-transparent"><a href="#" class="text-white fw-semibold">Update Cart</a></button>
+                        <button class="btn-all rounded-pill border border-1 ms-2 border-transparent"><a href="shop.html" class="text-white fw-semibold">Continue Shopping</a></button>
+                    </div>
+                    <h4>Coupon</h4>
+                    <p>Enter your coupon code if you have one</p>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <input type="text" name="coupon" id="coupon" placeholder="Coupon Code.." class="form-control p-3 coupon">
+                        <button class="btn-all py-2 ms-3 border border-1 border-transparent rounded-pill text-white fw-semibold" onclick="discount()">Apply Coupon</button> 
+                    </div>
+                    
+                </div>
+                <div class="col-12 col-lg-6 text-center my-3">
+                    <h4 class="border-bottom pb-3">Cart Totals </h4>
+                    <div class="d-flex align-items-center justify-content-evenly my-2 my-lg-3">
+                        <h5>Subtotal</h5>
+                        <p id="subTotal">4920</p>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-evenly my-2 my-lg-3">
+                        <h5>Subtotal Disc</h5>
+                        <p id="after-disc">No discount</p>
+                    </div>
+                    <button class="btn-all border rounded-pill text-white fw-semibold">Proceed to checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End cart -->
+    
+    <!-- Start Footer -->
+    <footer>
+        <div class="container">
+            <div class="sofa-img">
+                <img src="images\sofa-footer.png" alt="">
+            </div>
+            <!-- Subscribe Form -->
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="subscribe">
+                        <h2>
+                            <img src="https://themewagon.github.io/furni/images/envelope-outline.svg" alt="">
+                            Subscribe to Newsletter
+                        </h2>
+                        <form action="" class="row">
+                            <div class="col-auto mb-3">
+                                <input type="text" placeholder="Enter Your Name">
+                            </div>
+                            <div class="col-auto mb-3">
+                                <input type="text" placeholder="Enter Your Name">
+                            </div>
+                            <div class="col-auto mb-3">
+                                <button class="btn-all"><i class="fa-solid fa-paper-plane"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer Links -->
+            <div class="row mb-5">
+                <div class="col-lg-4 mb-3 info">
+                    <h1 class="footer-logo">Furni.</h1>
+                    <p>
+                        Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique. Pellentesque habitant
+                    </p>
+                    <ul class="list-unstyled social-links">
+                        <li><a href=""><i class="fa-brands fa-facebook-f"></i></a></li>
+                        <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+                        <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href=""><i class="fa-brands fa-linkedin-in"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row links-footer">
+                        <div class="col-6 col-sm-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="#">About us</a></li>
+                                <li><a href="#">Services</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Contact us</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-sm-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="#">Support</a></li>
+                                <li><a href="#">Knowledge base</a></li>
+                                <li><a href="#">Live chat</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-sm-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="#">Jobs</a></li>
+                                <li><a href="#">Our team</a></li>
+                                <li><a href="#">Leadership</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-sm-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="#">Nordic Chair</a></li>
+                                <li><a href="#">Kruzo Aero</a></li>
+                                <li><a href="#">Ergonomic Chair</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Copyright -->
+            <div class="border-top copyright">
+                <div class="row pt-4">
+                    <div class="col-lg-6">
+                        <p class="mb-2 text-center text-lg-start">Copyright ©<script>document.write(new Date().getFullYear()); </script>. All Rights Reserved. — Designed with love by <a href="#">Group 116 Team 3</a> 
+        </p>
+                    </div>
+
+                    <div class="col-lg-6 text-center text-lg-end">
+                        <ul class="list-unstyled d-inline-flex ms-auto">
+                            <li class="me-4"><a href="#">Terms &amp; Conditions</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    
+<!-- MDB -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.umd.min.js"></script>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!-- JS File -->
+<script src="js/main.js"></script>
+<script src="js/cart.js"></script>
+
+</body>
+</html>
