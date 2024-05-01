@@ -57,3 +57,6 @@ function discount() {
         console.log(document.getElementById("after-disc").innerHTML = sale - (sale * (20 /100)));
     }
 }
+
+countCart = document.querySelector('.count-item')
+countCart.innerHTML = JSON.parse(localStorage.getItem("id")).length;
