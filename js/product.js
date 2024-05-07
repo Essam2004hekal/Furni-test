@@ -26,13 +26,16 @@
     let countCart = document.getElementById("count-cart");
 
     let all_products_json;
-
     let product_cart = [];
 
     function addToCart(id, btn) {
     console.log(all_products_json[2]);
     product_cart.push(all_products_json[id]);
     localStorage.setItem("id", JSON.stringify(product_cart));
+
+    let totalPrice = calculateTotalPrice(product_cart);
+    localStorage.setItem('totalPrice', totalPrice);
+
     btn.classList.add("active");
     swal({
         title: "Added to cart!",
@@ -40,40 +43,13 @@
         button: "ok",
     });
     countCart.innerHTML = product_cart.length;
-    
     // getCartItems()
     }
-    totalValue = localStorage.getItem("totalValue");
 
-    function getCartItems() {
-    let items_c = "";
-    product_cart = JSON.parse(localStorage.getItem("id"));
-    if (product_cart) {
-        product_cart.map((item) => {
-        items_c += `
-                <tr class="table-row">
-                    <td class="w-25"><img src="${item.img}" class="w-50" alt="" /></td>
-                    <td class="name">  ${item.name}</td>
-                    <td class="Price">${item.price}</td>
-                    <td>
-                    <div class="d-flex align-items-center justify-content-evenly">
-                        <button class="border-0 fs-5 increment">+</button>
-                            <span class="border btn fs-5 m-0 quantity"> 1 </span>
-                        <button class=" border-0 fs-5 fw-bold decrement">-</button>
-                    </div>
-                    </td>
-                    <td class="total-price" id="total_price_id">${totalValue}</td>
-                    <td>
-                    <button class="btn remove" data-id="${item.id}">×</button>
-                </td>
-                </tr>
-                `;
+    function calculateTotalPrice(cart) {
+        let total = 0;
+        cart.forEach(item => {
+            total += item.price;
         });
-        items_in_cart.innerHTML = items_c;
-
-        removeProduct();
+        return total;
     }
-    };
-    getCartItems()
-
-
