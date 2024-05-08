@@ -16,25 +16,19 @@ increment.forEach((btn, index)=> {
         if (quantity[index].innerHTML < 9) {
                 count++;
                 quantity[index].innerHTML = count;
-                // console.log(Number(price[index].innerHTML))
                 let total = Number(quantity[index].innerHTML) * Number(price[index].innerHTML);
                 // localStorage.setItem('totalValue', total)
-                // console.log(total)
-                // console.log(total_in_row[index]);
                 total_in_row[index].innerHTML = total
-                // subTotal.innerHTML = Number(total_in_row[index].innerHTML)
                 // calc SubTotal
                 let totalSum = 0;
                 for (let i = 0; i < total_in_row.length; i++) {
                 totalSum += Number(total_in_row[i].innerHTML);
                 }
                 subTotal.innerHTML = totalSum;
-                // console.log(total_in_row[index].innerHTML);
                 // Discount When increment
                 let sale = Number(document.getElementById("subTotal").innerHTML)
                     if (coupon.value === "mec_20") {
                         document.getElementById("after-disc").innerHTML = sale - (sale * (20 /100)) ; 
-                        // console.log(document.getElementById("after-disc").innerHTML = sale - (sale * (20 /100)));
                     }
         } else {
             alert('max')
@@ -58,10 +52,8 @@ decrement.forEach((btn, index)=> {
         if (quantity[index].innerHTML > 1) {
                 count--
                 quantity[index].innerHTML = count;
-                // console.log(Number(price[index].innerHTML))
                 let total = Number(quantity[index].innerHTML) * Number(price[index].innerHTML);
                 // localStorage.setItem('totalValue', total)
-                // console.log(total)
                 total_in_row[index].innerHTML = total
                 // Calc SubTotal
                 let totalSum = 0;
@@ -73,7 +65,6 @@ decrement.forEach((btn, index)=> {
                 let sale = Number(document.getElementById("subTotal").innerHTML)
                 if (coupon.value === "mec_20") {
                 document.getElementById("after-disc").innerHTML = sale - (sale * (20 /100)) ; 
-                // console.log(document.getElementById("after-disc").innerHTML = sale - (sale * (20 /100)));
                 }
             } else {
                 alert('min')
@@ -88,8 +79,7 @@ decrement.forEach((btn, index)=> {
 let sale = Number(document.getElementById("subTotal").innerHTML)
 function discount() {
     if (coupon.value === "mec_20") {
-        document.getElementById("after-disc").innerHTML = sale - (sale * (20 /100)) ; 
-        // console.log(document.getElementById("after-disc").innerHTML = sale - (sale * (20 /100)));
+        document.getElementById("after-disc").innerHTML = sale - (sale * (20 /100)); 
     }
 }
 
